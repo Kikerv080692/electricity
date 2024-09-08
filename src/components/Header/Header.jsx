@@ -1,21 +1,27 @@
-import { NavLink } from 'react-router-dom'
+import { FaShoppingBasket } from "react-icons/fa";
 import { mainNavigation } from '../../data/mainNavigation'
+import * as SC from './Header.styled'
+
 
 export const Header = () => {
     return (
-        <div>
-            LOGO
-
-            <nav>
-                <ul>
+        <SC.HeaderContsiner>
+           <SC.Logo>LOGO</SC.Logo> 
+            <SC.Nav>
+                <SC.NavList>
                     {mainNavigation.map(({ src, name, id }) => (
-                        <li key={id}>
-                            <NavLink to={src}>{name}</NavLink>
-                        </li>
+                        <SC.NavItem key={id}>
+                            <SC.StyledNavLink to={src}>{name}</SC.StyledNavLink>
+                        </SC.NavItem>
+                        
+
                     ))}
-                </ul>
-            </nav>
-        </div>
+                    <SC.NavItem >
+                            <SC.StyledNavLink to={'/basket'}><FaShoppingBasket /></SC.StyledNavLink>
+                        </SC.NavItem>
+                </SC.NavList>
+            </SC.Nav>
+        </SC.HeaderContsiner>
     )
 }
 

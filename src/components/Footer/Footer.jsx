@@ -1,10 +1,10 @@
-
+import * as SC from './Footer.styled'
 
 export const Footer = () => {
   return (
-    <div>
-      Footer
-    </div>
+    <SC.FooterContainer>
+      <SC.Text>Footer</SC.Text>
+    </SC.FooterContainer>
   )
 }
 
